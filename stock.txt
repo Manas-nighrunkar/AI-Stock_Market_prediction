@@ -1,0 +1,25 @@
+1. we will collect the stock data - AAPL -- Done
+2. Preprocess the data - Train and Test----
+3.create an stacked LSTM
+4.
+
+eg. of data  120,130,125,140,134,150 |||||,160,190,154
+
+method to split train and test
+1. cross validation
+2.. random seed
+
+but for Timeseries data --> Train - 120,130,125,140,134,150    Test ---> 160,190,154
+in timeseries data the current data depends on previous all data
+120,130,125,140,134,150 			160,190,154,160,170
+timesteps=3
+       X_train       y_train			   x_test             y_test
+f1       f2      f3     o/p  			f1       f2      f3     o/p 
+120   130   125   145				160    190  154    160
+130   125   140   134				190   154    160   170
+ 
+# to bring output we need to consider all previous data
+
+f1 ------------------------------------------------------f100
+130 136                                                    131               140
+136 ----------------------------------------------------140               134
